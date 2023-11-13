@@ -1,0 +1,37 @@
+.addTask {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 3.375rem;
+  margin: calc(0px - 3.5rem);
+
+  input {
+    flex: 1;
+    height: 100%;
+    padding: 0 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--gray-700);
+    color: var(--gray-100);
+    &:focus {
+      outline: transparent;
+      box-shadow: 0 0 0 2px var(--purple);
+    }
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 100%;
+    padding: 1rem;
+    background: var(--blue-dark);
+    color: var(--gray-100);
+    border-radius: 8px;
+    border: 0;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover {
+      background: var(--blue);
+    }
+  }
+}
