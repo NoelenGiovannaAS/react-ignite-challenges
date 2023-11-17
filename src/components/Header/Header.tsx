@@ -1,9 +1,9 @@
 import Logo from "../../assets/logo.svg";
-import "./Header.scss";
+import styles from "./Header.module.scss";
 
 export const Header = () => {
   return (
-    <header>
+    <header className={styles.header}>
       <img src={Logo} />
     </header>
   );
