@@ -1,15 +1,11 @@
-import styles from "./App.module.scss";
-import { Header } from "./components/Header/Header";
-import { TaskList } from "./components/TaskList/TaskList";
+import { Header, TaskList } from "./components";
 
 function App() {
   return (
-    <div>
+    <>
       <Header />
-      <div className={styles.wrapper}>
-        <TaskList />
-      </div>
-    </div>
+      <TaskList />
+    </>
   );
 }
 

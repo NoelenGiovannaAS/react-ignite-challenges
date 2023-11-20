@@ -1,12 +1,12 @@
-import styles from "./TaskListCounter.module.scss";
+import styles from "./TaskCounter.module.scss";
 
 interface Props {
   counterName: string;
-  counter: string;
+  counter: string | number;
   color: string;
 }
 
-export const TaskListCounter = ({ counterName, counter, color }: Props) => {
+export const TaskCounter = ({ counterName, counter, color }: Props) => {
   return (
     <strong className={styles.counterText} style={{ color: `var(${color})` }}>
       {counterName}

@@ -1,9 +1,12 @@
+.addTaskForm {
+  margin: calc(0px - 1.5rem);
+  width: 100%;
+}
 .addTask {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
   height: 3.375rem;
-  margin: calc(0px - 3.5rem);
 
   input {
     flex: 1;
@@ -32,6 +35,11 @@
     cursor: pointer;
     &:hover {
       background: var(--blue);
+    }
+    &:disabled {
+      background: var(--gray-300);
+      color: var(--gray-400);
+      cursor: initial;
     }
   }
 }
