@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { Default } from "./layouts/Default";
+import { Home } from "./pages/Home";
 import { GlobalStyle } from "./styles/global";
 import { defaultTheme } from "./styles/themes";
 
@@ -11,7 +12,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <div></div>,
+        element: <Home />,
       },
     ],
   },
