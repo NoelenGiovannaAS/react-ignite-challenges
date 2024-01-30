@@ -18,7 +18,7 @@ const variantStyles = (variant = "primary") =>
     `,
     secondary: css`
       background: ${(props) => props.theme.base.button};
-      font-size: 10px;
+      font-size: 0.625rem;
       line-height: 130%;
       font-weight: bold;
       width: 5.6875rem;
