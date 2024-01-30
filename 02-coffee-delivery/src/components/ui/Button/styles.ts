@@ -48,5 +48,6 @@ const variantStyles = (variant = "primary") =>
 export const Button = styled.button<{ variant: string }>`
   border-radius: 6px;
   border: 0;
+  cursor: pointer;
   ${({ variant }) => variantStyles(variant)}
 `;
