@@ -1,5 +1,6 @@
 import { CircleDashed } from "phosphor-react";
 import { CartLink } from "../components/ui/CartLink/CartLink";
+import { InputText } from "../components/ui/Input/InputText/InputText";
 import { SelectPaymentType } from "../components/ui/Input/SelectPayment/SelectPayment";
 
 export const Home = () => {
@@ -20,6 +21,7 @@ export const Home = () => {
           },
         ]}
       />
+      <InputText placeholder="teste" width="27rem" />
     </div>
   );
 };
