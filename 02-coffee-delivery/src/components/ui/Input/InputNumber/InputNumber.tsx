@@ -1,8 +1,18 @@
-type InputType = "TEXT" | "NUMBER";
+import { Minus, Plus } from "phosphor-react";
+import * as Styles from "./styles";
 
-interface IInput {
-  type: InputType;
-}
-export const Input = ({ type }: IInput) => {
-  return;
+export const InputQuantityNumber = () => {
+  return (
+    <Styles.InputNumber>
+      <button>
+        <Minus size={14} />
+      </button>
+
+      <input value={1} />
+
+      <button>
+        <Plus size={14} />
+      </button>
+    </Styles.InputNumber>
+  );
 };
