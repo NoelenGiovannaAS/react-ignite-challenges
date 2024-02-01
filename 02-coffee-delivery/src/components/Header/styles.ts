@@ -8,8 +8,9 @@ export const HeaderContainer = styled.header`
   nav {
     display: flex;
     gap: 0.5rem;
+  }
 
-    a {
+  /* a {
       width: 3rem;
       height: 3rem;
 
@@ -29,5 +30,21 @@ export const HeaderContainer = styled.header`
         color: ${(props) => props.theme["green-500"]};
       }
     }
+  }*/
+`;
+
+export const LocaleInfo = styled.div`
+  color: ${(props) => props.theme.product["purple-dark"]};
+  background: ${(props) => props.theme.product["purple-light"]};
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  width: 8.9375rem;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 6px;
+
+  & > svg {
+    color: ${(props) => props.theme.product["purple"]};
   }
 `;
