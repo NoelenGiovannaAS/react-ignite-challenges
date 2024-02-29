@@ -29,5 +29,6 @@ export const Cart = styled.div<{ qty: number }>`
   border-radius: 6px;
   padding: 0.5rem;
   margin: 0 0.25rem;
-  ${({ qty }) => qty && withQtyItemCart(qty)}
+
+  ${({ qty }) => qty && withQtyItemCart(qty)};
 `;

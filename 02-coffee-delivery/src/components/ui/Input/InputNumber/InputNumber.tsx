@@ -1,9 +1,9 @@
 import { Minus, Plus } from "phosphor-react";
-import * as Styles from "./styles";
+import { InputNumber } from "./styles";
 
 export const InputQuantityNumber = () => {
   return (
-    <Styles.InputNumber>
+    <InputNumber>
       <button>
         <Minus size={14} />
       </button>
@@ -13,6 +13,6 @@ export const InputQuantityNumber = () => {
       <button>
         <Plus size={14} />
       </button>
-    </Styles.InputNumber>
+    </InputNumber>
   );
 };

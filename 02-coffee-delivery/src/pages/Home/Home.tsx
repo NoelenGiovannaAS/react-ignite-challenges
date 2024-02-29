@@ -1,5 +1,5 @@
-import { Catalog } from "./Home/Catalog/Catalog";
-import { Intro } from "./Home/Intro/Intro";
+import { Catalog } from "./Catalog/Catalog";
+import { Intro } from "./Intro/Intro";
 import * as Styles from "./styles";
 
 export const Home = () => {

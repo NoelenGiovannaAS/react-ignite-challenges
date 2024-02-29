@@ -5,10 +5,9 @@ export const InputNumber = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 4.5rem;
-  height: 2rem;
+  gap: 0.25rem;
   padding: 0.5rem;
-  margin: 0 0.25rem;
+  //margin: 0 0.25rem;
   color: ${(props) => props.theme.base.title};
   border-radius: 4px;
   & > input {

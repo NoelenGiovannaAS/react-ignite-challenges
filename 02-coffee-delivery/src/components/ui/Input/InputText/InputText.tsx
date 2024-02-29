@@ -1,6 +1,7 @@
+import { InputHTMLAttributes } from "react";
 import * as Styles from "./styles";
 
-interface IInputText {
+interface IInputText extends InputHTMLAttributes<HTMLInputElement> {
   placeholder: string;
   width?: string;
 }

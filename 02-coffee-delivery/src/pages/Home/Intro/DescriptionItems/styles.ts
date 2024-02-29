@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
 
 const ICON_COLOR = {
-  orange: "yellow-dark",
-  black: "text",
+  yellowDark: "yellow-dark",
+  text: "text",
   yellow: "yellow",
   purple: "purple",
 } as const;
@@ -18,19 +18,25 @@ export const WrapperDescriptionItems = styled.div`
   grid-column-gap: 0.75rem;
 `;
 
-export const Item = styled.div<ItemProp>`
+export const Item = styled.div`
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   gap: 0.75rem;
+`;
 
+export const ItemIcon = styled.div<ItemProp>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  background: ${(props) =>
+    props.iconColor === "text"
+      ? props.theme.base[ICON_COLOR[props.iconColor]]
+      : props.theme.product[ICON_COLOR[props.iconColor]]};
+
+  padding: 10px;
+  border-radius: 50%;
   & > svg {
-    padding: 0 8px;
-    background: ${(props) =>
-      props.iconColor === "black"
-        ? props.theme.base[ICON_COLOR[props.iconColor]]
-        : props.theme.product[ICON_COLOR[props.iconColor]]};
-    border-radius: 50%;
     color: ${(props) => props.theme.base.white};
   }
 `;

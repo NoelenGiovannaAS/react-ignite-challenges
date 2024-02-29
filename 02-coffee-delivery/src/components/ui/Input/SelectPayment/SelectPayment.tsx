@@ -1,5 +1,5 @@
 import { ReactNode, useState } from "react";
-import * as Styles from "./styles";
+import { Payment, PaymentContainer, WrapperSelectPayments } from "./styles";
 interface Ipayment {
   icon: ReactNode;
   paymentTypeName: string;
@@ -9,7 +9,7 @@ interface ISelectPaymentTypes {
   paymentsTypes: Ipayment[];
 }
 
-export const SelectPaymentType = ({ paymentsTypes }: ISelectPaymentTypes) => {
+export const SelectPayment = ({ paymentsTypes }: ISelectPaymentTypes) => {
   const [paymentChecked, setPaymentChecked] = useState(paymentsTypes);
 
   const handleCheckPayment = (paymentToCheck: string) => {
@@ -25,9 +25,9 @@ export const SelectPaymentType = ({ paymentsTypes }: ISelectPaymentTypes) => {
     );
   };
   return (
-    <>
+    <WrapperSelectPayments>
       {paymentChecked.map((paymentChecked) => (
-        <Styles.PaymentContainer key={paymentChecked.paymentTypeName}>
+        <PaymentContainer key={paymentChecked.paymentTypeName}>
           <input
             id={paymentChecked.paymentTypeName}
             type="radio"
@@ -36,17 +36,15 @@ export const SelectPaymentType = ({ paymentsTypes }: ISelectPaymentTypes) => {
             checked={paymentChecked.checked}
           />
 
-          <Styles.Payment
+          <Payment
             htmlFor={paymentChecked.paymentTypeName}
             checked={paymentChecked.checked}
           >
             {paymentChecked.icon}
             {paymentChecked.paymentTypeName}
-          </Styles.Payment>
-        </Styles.PaymentContainer>
+          </Payment>
+        </PaymentContainer>
       ))}
-    </>
+    </WrapperSelectPayments>
   );
-
-  /**/
 };

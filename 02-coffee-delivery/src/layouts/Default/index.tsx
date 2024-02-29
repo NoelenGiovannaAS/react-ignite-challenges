@@ -1,12 +1,12 @@
 import { Header } from "components/Header/Header.tsx";
 import { Outlet } from "react-router-dom";
-import * as Styles from "./styles.ts";
+import { Container } from "./styles.ts";
 
 export const Default = () => {
   return (
-    <Styles.Container>
+    <Container>
       <Header />
       <Outlet />
-    </Styles.Container>
+    </Container>
   );
 };

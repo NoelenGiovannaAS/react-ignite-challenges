@@ -1,13 +1,13 @@
 import { ShoppingCart } from "phosphor-react";
-import * as Styles from "./styles";
+import { Cart } from "./styles";
 
 interface ICartLink {
   quantity?: number;
 }
 export const CartLink = ({ quantity = 0 }: ICartLink) => {
   return (
-    <Styles.Cart qty={quantity}>
+    <Cart qty={quantity}>
       <ShoppingCart size={32} weight="fill" />
-    </Styles.Cart>
+    </Cart>
   );
 };

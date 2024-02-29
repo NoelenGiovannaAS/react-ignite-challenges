@@ -8,10 +8,10 @@ const variantStyles = (variant = "primary") =>
       font-size: 14px;
       line-height: 160%;
       font-weight: bold;
-      width: 8.25rem;
+      //width: 8.25rem;
       height: 2.875rem;
       padding: 0.75rem 0.5rem;
-      margin: 0 0.25rem;
+      //margin: 0 0.25rem;
       &:hover {
         background: ${(props) => props.theme.product["yellow-dark"]};
       }
@@ -25,7 +25,7 @@ const variantStyles = (variant = "primary") =>
       height: 2rem;
       border-radius: 6px;
       padding: 0 0.5rem;
-      margin: 0 0.25rem;
+      //margin: 0 0.25rem;
       &:hover {
         background: ${(props) => props.theme.base["hover"]};
       }
@@ -36,7 +36,7 @@ const variantStyles = (variant = "primary") =>
       height: 2.375rem;
       border-radius: 6px;
       padding: 0.5rem 0.5rem;
-      margin: 0 0.5rem;
+      //margin: 0 0.5rem;
       font-size: 22px;
 
       &:hover {
@@ -49,5 +49,9 @@ export const Button = styled.button<{ variant: string }>`
   border-radius: 6px;
   border: 0;
   cursor: pointer;
+
   ${({ variant }) => variantStyles(variant)}
+  & > svg {
+    color: ${(props) => props.theme.base.white};
+  }
 `;

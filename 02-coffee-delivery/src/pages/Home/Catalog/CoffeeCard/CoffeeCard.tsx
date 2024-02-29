@@ -8,16 +8,29 @@ export const CoffeeCard = (props: ICoffee) => {
   const { description, image, name, price, tags } = props;
 
   return (
-    <Styles.CoffeeItem>
+    <Styles.Card>
       <Styles.ImageCoffee src={image} />
-      {tags.map((tag) => (
-        <Styles.CoffeTag key={tag}>{tag.toString()}</Styles.CoffeTag>
-      ))}
-      <Styles.CoffeName>{name}</Styles.CoffeName>
-      <Styles.CoffeDescription>{description}</Styles.CoffeDescription>
-      <Styles.CoffePrice>R$ {price}</Styles.CoffePrice>
-      <InputQuantityNumber />
-      <Button variant="icon" icon={<ShoppingCart weight="fill" />} />
-    </Styles.CoffeeItem>
+      <Styles.CoffeeTags>
+        {tags.map((tag) => (
+          <Styles.CoffeTag key={tag}>{tag.toString()}</Styles.CoffeTag>
+        ))}
+      </Styles.CoffeeTags>
+
+      <Styles.CoffeDescriptionContainer>
+        <Styles.CoffeName>{name}</Styles.CoffeName>
+        <Styles.CoffeDescription>{description}</Styles.CoffeDescription>
+      </Styles.CoffeDescriptionContainer>
+
+      <Styles.FooterPriceQty>
+        <Styles.CoffePrice>
+          R$
+          <strong>{price}</strong>
+        </Styles.CoffePrice>
+        <Styles.ActionsContainer>
+          <InputQuantityNumber />
+          <Button variant="icon" icon={<ShoppingCart weight="fill" />} />
+        </Styles.ActionsContainer>
+      </Styles.FooterPriceQty>
+    </Styles.Card>
   );
 };

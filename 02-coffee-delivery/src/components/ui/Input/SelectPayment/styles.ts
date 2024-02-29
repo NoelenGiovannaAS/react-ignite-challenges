@@ -1,5 +1,13 @@
 import { styled } from "styled-components";
 
+export const WrapperSelectPayments = styled.div`
+  display: flex;
+  gap: 0.75rem;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
+`;
 export const PaymentContainer = styled.div`
   display: flex;
   gap: 1rem;
