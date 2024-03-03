@@ -6,6 +6,6 @@ interface IInputText extends InputHTMLAttributes<HTMLInputElement> {
   width?: string;
 }
 
-export const InputText = ({ placeholder, width = "27rem" }: IInputText) => {
+export const InputText = ({ placeholder, width = "" }: IInputText) => {
   return <Styles.InputText placeholder={placeholder} width={width} />;
 };

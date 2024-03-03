@@ -25,67 +25,70 @@ export const DeliveryAddressForm = () => {
           placeholder="CEP"
           id="cep"
           type="text"
-          width="25%"
           //list="task-suggestions"
           //disabled={!!activeCycle}
           {...register("cep")}
+          width="33.33%"
         />
 
         <InputText
           placeholder="Rua"
           id="rua"
           type="text"
-          width="100%"
+          //width="100%"
           //list="task-suggestions"
           //disabled={!!activeCycle}
           {...register("rua")}
         />
 
-        <InputText
-          placeholder="Número"
-          id="numero"
-          type="number"
-          width="25%"
-          //list="task-suggestions"
-          //disabled={!!activeCycle}
-          {...register("numero")}
-        />
+        <div>
+          <InputText
+            placeholder="Número"
+            id="numero"
+            type="number"
+            //list="task-suggestions"
+            //disabled={!!activeCycle}
+            {...register("numero")}
+          />
 
-        <InputText
-          placeholder="Complemento"
-          id="rua"
-          width="75%"
-          //list="task-suggestions"
-          //disabled={!!activeCycle}
-          {...register("complemento")}
-        />
+          <InputText
+            placeholder="Complemento"
+            id="rua"
+            //list="task-suggestions"
+            //disabled={!!activeCycle}
+            {...register("complemento")}
+            width="75%"
+          />
+        </div>
 
-        <InputText
-          placeholder="Bairro"
-          id="bairro"
-          width="25%"
-          //list="task-suggestions"
-          //disabled={!!activeCycle}
-          {...register("bairro")}
-        />
+        <div>
+          <InputText
+            placeholder="Bairro"
+            id="bairro"
+            //list="task-suggestions"
+            //disabled={!!activeCycle}
 
-        <InputText
-          placeholder="Cidade"
-          id="cidade"
-          width="60%"
-          //list="task-suggestions"
-          //disabled={!!activeCycle}
-          {...register("cidade")}
-        />
+            {...register("bairro")}
+          />
 
-        <InputText
-          placeholder="UF"
-          id="uf"
-          width="15%"
-          //list="task-suggestions"
-          //disabled={!!activeCycle}
-          {...register("uf")}
-        />
+          <InputText
+            placeholder="Cidade"
+            id="cidade"
+            //list="task-suggestions"
+            //disabled={!!activeCycle}
+            {...register("cidade")}
+            width="85%"
+          />
+
+          <InputText
+            placeholder="UF"
+            id="uf"
+            //list="task-suggestions"
+            //disabled={!!activeCycle}
+            {...register("uf")}
+            width="15%"
+          />
+        </div>
       </FormContainer>
     </WrapperDeliveryAddress>
   );
