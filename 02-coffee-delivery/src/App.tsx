@@ -1,4 +1,5 @@
 import { Checkout } from "pages/Checkout/Checkout";
+import { Success } from "pages/Success/Success";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { Default } from "./layouts/Default";
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/checkout",
         element: <Checkout />,
+      },
+      {
+        path: "/success",
+        element: <Success />,
       },
     ],
   },

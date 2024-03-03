@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 export const WrapperSelectedCoffees = styled.div`
   max-height: 60%;
-  min-height: 60%;
+  //min-height: 60%;
   overflow: auto;
   &::-webkit-scrollbar {
     width: 4px;
