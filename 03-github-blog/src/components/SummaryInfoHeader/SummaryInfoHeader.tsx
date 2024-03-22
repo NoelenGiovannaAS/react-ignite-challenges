@@ -1,5 +1,6 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import avatarTest from "../../assets/avatar-test.png";
+
 import {
   Bio,
   Content,
@@ -14,6 +15,7 @@ import {
 export const SummaryInfoHeader = () => {
   const currentPage = useLocation();
   const isPostPage = currentPage.pathname === "/post";
+  const navigate = useNavigate();
 
   return (
     <SummaryInfoHeaderWrapper>
@@ -22,7 +24,7 @@ export const SummaryInfoHeader = () => {
         <Summary>
           {isPostPage ? (
             <HeaderSummary>
-              <RedirectLink>VOLTAR</RedirectLink>
+              <RedirectLink onClick={() => navigate(-1)}>VOLTAR</RedirectLink>
               <RedirectLink>GITHUB</RedirectLink>
             </HeaderSummary>
           ) : (
@@ -43,7 +45,7 @@ export const SummaryInfoHeader = () => {
           )}
         </Summary>
 
-        <Infos isPostPage>
+        <Infos $isPostPage={isPostPage}>
           <Info>cameronwll</Info>
           {isPostPage ? (
             <>

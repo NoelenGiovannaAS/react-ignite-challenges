@@ -3,10 +3,10 @@ export const SearchBar = () => {
   return (
     <SearchBarWrapper>
       <HeaderSearchBar>
-        <h2>Publicações</h2>
-        <h3>6 publicações</h3>
+        <h3>Publicações</h3>
+        <h5>6 publicações</h5>
       </HeaderSearchBar>
-      <Input></Input>
+      <Input placeholder="Buscar conteúdo" />
     </SearchBarWrapper>
   );
 };

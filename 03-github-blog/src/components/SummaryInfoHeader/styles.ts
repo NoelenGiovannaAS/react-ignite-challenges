@@ -6,7 +6,7 @@ export const SummaryInfoHeaderWrapper = styled.section`
   border-radius: 10px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  max-width: 56%;
+  max-width: ${(props) => props.theme["max-width-page"]};
   min-width: 35rem;
   max-height: 16rem;
   margin: 0 auto;
@@ -37,6 +37,7 @@ export const HeaderSummary = styled.div`
 `;
 
 export const RedirectLink = styled.a`
+  cursor: pointer;
   color: ${(props) => props.theme["blue"]};
 `;
 
@@ -48,11 +49,14 @@ export const Bio = styled.p`
   color: ${(props) => props.theme["base-text"]};
 `;
 
-export const Infos = styled.div<{ isPostPage: boolean }>`
+export const Infos = styled.div<{ $isPostPage: boolean }>`
   display: flex;
   gap: 1.5rem;
+  font-weight: 400;
   color: ${(props) =>
-    props.isPostPage ? props.theme["base-span"] : props.theme["base-subtitle"]};
+    props.$isPostPage
+      ? props.theme["base-span"]
+      : props.theme["base-subtitle"]};
 `;
 
 export const Info = styled.span`

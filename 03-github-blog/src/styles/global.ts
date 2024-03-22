@@ -13,8 +13,9 @@ export const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
     }
 
-    border-style, input-security,textarea, button, h1, h2, h3, h4, h5, h6, p, span, a{
+    border-style, input-security,textarea, button, h1, h2, h3, h4, h5, h6, p, span, a, ::placeholder{
         font-family: 'Nunito', sans-serif;
+        line-height: 160%;
     }
 
 `;

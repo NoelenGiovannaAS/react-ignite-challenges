@@ -4,18 +4,19 @@ import { Content, HeaderPost, PostWrapper, TimePosted, Title } from "./styles";
 interface PostProps {
   title: string;
   content: string;
+  timePosted: string;
 }
 
-export const Post = ({ title, content }: PostProps) => {
+export const Post = ({ title, content, timePosted }: PostProps) => {
   return (
-    <Link to="/post">
-      <PostWrapper>
+    <PostWrapper>
+      <Link to="/post">
         <HeaderPost>
           <Title>{title}</Title>
-          <TimePosted></TimePosted>
+          <TimePosted>{timePosted}</TimePosted>
         </HeaderPost>
         <Content>{content}</Content>
-      </PostWrapper>
-    </Link>
+      </Link>
+    </PostWrapper>
   );
 };

@@ -4,9 +4,12 @@ export const PostsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  margin: 0 auto;
+  max-width: ${(props) => props.theme["max-width-page"]};
+  margin-bottom: 2rem;
 `;
 export const PostsContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
 `;
