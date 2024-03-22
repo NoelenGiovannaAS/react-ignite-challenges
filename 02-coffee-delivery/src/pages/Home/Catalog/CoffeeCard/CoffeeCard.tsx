@@ -1,11 +1,42 @@
 import { Button } from "components/ui/Button/Button";
 import { InputQuantityNumber } from "components/ui/Input/InputNumber/InputNumber";
-import { ShoppingCart } from "phosphor-react";
-import { ICoffee } from "../Catalog";
+import { CartContext } from "contexts/CartProvider";
+import { ICoffee } from "interfaces/coffees";
+import { Check, ShoppingCart } from "phosphor-react";
+import { useContext, useState } from "react";
 import * as Styles from "./styles";
 
-export const CoffeeCard = (props: ICoffee) => {
-  const { description, image, name, price, tags } = props;
+export const CoffeeCard = ({
+  id,
+  description,
+  image,
+  title,
+  price,
+  tags,
+}: ICoffee) => {
+  const { addToCart } = useContext(CartContext);
+  const [quantityCatalog, setQuantityCatalog] = useState(0);
+  const [itemAdded, setItemAdded] = useState(false);
+
+  function incrementQuantity() {
+    setQuantityCatalog((state) => state + 1);
+  }
+
+  function decrementQuantity() {
+    if (quantityCatalog > 0) {
+      setQuantityCatalog((state) => state - 1);
+    }
+  }
+
+  function editQuantity(e: React.ChangeEvent<HTMLInputElement>) {
+    const editedValue = e.target.value;
+    setQuantityCatalog(Number(editedValue));
+  }
+
+  function handleAddItem() {
+    addToCart({ id, quantity: quantityCatalog });
+    setItemAdded(true);
+  }
 
   return (
     <Styles.Card>
@@ -17,18 +48,34 @@ export const CoffeeCard = (props: ICoffee) => {
       </Styles.CoffeeTags>
 
       <Styles.CoffeDescriptionContainer>
-        <Styles.CoffeName>{name}</Styles.CoffeName>
+        <Styles.CoffeName>{title}</Styles.CoffeName>
         <Styles.CoffeDescription>{description}</Styles.CoffeDescription>
       </Styles.CoffeDescriptionContainer>
 
       <Styles.FooterPriceQty>
         <Styles.CoffePrice>
           R$
-          <strong>{price}</strong>
+          <strong>{price.toFixed(2)}</strong>
         </Styles.CoffePrice>
-        <Styles.ActionsContainer>
-          <InputQuantityNumber />
-          <Button variant="icon" icon={<ShoppingCart weight="fill" />} />
+
+        <Styles.ActionsContainer isItemAdded={itemAdded}>
+          <InputQuantityNumber
+            quantity={quantityCatalog}
+            incrementQuantity={incrementQuantity}
+            decrementQuantity={decrementQuantity}
+            editQuantity={editQuantity}
+          />
+          <Button
+            variant="icon"
+            icon={
+              itemAdded ? (
+                <Check weight="fill" />
+              ) : (
+                <ShoppingCart weight="fill" />
+              )
+            }
+            handleClick={handleAddItem}
+          />
         </Styles.ActionsContainer>
       </Styles.FooterPriceQty>
     </Styles.Card>

@@ -1,6 +1,6 @@
-import Mochacchino from "assets/Mochaccino.png";
 import { Button } from "components/ui/Button/Button";
 import { InputQuantityNumber } from "components/ui/Input/InputNumber/InputNumber";
+import { ICoffee } from "interfaces/coffees";
 import { Trash } from "phosphor-react";
 import { useTheme } from "styled-components";
 import {
@@ -13,18 +13,23 @@ import {
   WrapperSelectedCoffee,
 } from "./styles";
 
-export const SelectedCoffee = () => {
+export const SelectedCoffee = ({
+  image,
+  price,
+  title,
+  quantity,
+}: Pick<ICoffee, "image" | "price" | "title" | "quantity">) => {
   return (
     <WrapperSelectedCoffee>
-      <ImageCoffee src={Mochacchino} />
+      <ImageCoffee src={image} />
       <CoffeeInfoContainer>
         <CoffeeInfoNamePrice>
-          <CoffeeName>Café com leite</CoffeeName>
-          <CoffePrice>R$ 10,00</CoffePrice>
+          <CoffeeName>{title}</CoffeeName>
+          <CoffePrice>{price.toFixed(2)}</CoffePrice>
         </CoffeeInfoNamePrice>
 
         <ActionsContainer>
-          <InputQuantityNumber />
+          <InputQuantityNumber quantity={quantity} />
           <Button
             variant="secondary"
             icon={<Trash size={16} color={`${useTheme().product["purple"]}`} />}

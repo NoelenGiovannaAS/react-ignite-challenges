@@ -68,10 +68,16 @@ export const FooterPriceQty = styled.div`
   width: 100%;
 `;
 
-export const ActionsContainer = styled.div`
+export const ActionsContainer = styled.div<{ isItemAdded?: boolean }>`
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  > button {
+    background: ${(props) =>
+      props.isItemAdded
+        ? props.theme.product["yellow-dark"]
+        : props.theme.product["purple-dark"]};
+  }
 `;
 
 export const CoffePrice = styled.h5`

@@ -51,6 +51,7 @@ export const Button = styled.button<{ variant: string }>`
   cursor: pointer;
 
   ${({ variant }) => variantStyles(variant)}
+
   & > svg {
     color: ${(props) => props.theme.base.white};
   }

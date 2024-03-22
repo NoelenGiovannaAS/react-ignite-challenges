@@ -15,8 +15,13 @@ export const InputNumber = styled.div`
     outline: none !important;
     border: none !important;
     box-shadow: none !important;
-    width: 10px;
+    width: 26px;
     height: 12px;
+    &[type="number"]::-webkit-inner-spin-button,
+    &[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
   }
   & > button {
     background: transparent;

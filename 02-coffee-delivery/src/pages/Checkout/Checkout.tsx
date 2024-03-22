@@ -2,7 +2,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
 import zod from "zod";
 import { FormCompleteYourOrder } from "./CompleteYourOrder/FormCompleteYourOrder";
-import { SummarySelectedCoffees } from "./SummarySelectedCoffees/SummarySelectedCoffees";
+import { Cart } from "./SummarySelectedCoffees/Cart/Cart";
 import { WrapperForm } from "./styles";
 export const Checkout = () => {
   const newCheckoutFormValidationSchema = zod.object({
@@ -40,7 +40,7 @@ export const Checkout = () => {
       <FormProvider {...newCheckoutForm}>
         <div>
           <FormCompleteYourOrder />
-          <SummarySelectedCoffees />
+          <Cart />
         </div>
       </FormProvider>
     </WrapperForm>

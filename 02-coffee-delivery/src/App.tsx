@@ -1,3 +1,4 @@
+import { CartContextProvider } from "contexts/CartProvider";
 import { Checkout } from "pages/Checkout/Checkout";
 import { Success } from "pages/Success/Success";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
@@ -32,7 +33,9 @@ export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
-      <RouterProvider router={router} />
+      <CartContextProvider>
+        <RouterProvider router={router} />
+      </CartContextProvider>
     </ThemeProvider>
   );
 }

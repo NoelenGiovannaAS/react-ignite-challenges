@@ -1,4 +1,5 @@
 import Styled from "styled-components";
+
 export const Catalog = Styled.div`
     display: flex;
     align-items: center;
