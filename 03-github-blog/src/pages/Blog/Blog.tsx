@@ -1,41 +1,34 @@
+import { useContext } from "react";
+import { ProfileInfoHeader } from "../../components/SummaryInfo/ProfileInfoHeader/ProfileInfoHeader";
+import { PostsContext } from "../../contexts/Posts";
 import { Post } from "./Post/Post";
 import { SearchBar } from "./SearchBar/SearchBar";
 import { PostsContainer, PostsWrapper } from "./styles";
 
 export const Blog = () => {
-  const posts = [
-    {
-      title: "Title 1",
-      timePosted: "1 hour ago",
-      text: "Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in",
-    },
-    {
-      title: "Title 1",
-      timePosted: "1 hour ago",
-      text: "Text 1",
-    },
-    {
-      title: "Title 1",
-      timePosted: "1 hour ago",
-      text: "Text 1",
-    },
-    {
-      title: "Title 1",
-      timePosted: "1 hour ago",
-      text: "Text 1",
-    },
-  ];
+  const {
+    dataPosts: { items: posts, total_count },
+  } = useContext(PostsContext);
+
+  const isEmpty = !posts.length;
   return (
     <PostsWrapper>
-      <SearchBar />
-      <PostsContainer>
-        {posts.map((post) => (
-          <Post
-            title={post.title}
-            content={post.text}
-            timePosted={post.timePosted}
-          />
-        ))}
+      <ProfileInfoHeader />
+      <SearchBar totalPublications={total_count} />
+      <PostsContainer $isEmpty={isEmpty}>
+        {isEmpty ? (
+          <p>Nenhum resultado encontrado.</p>
+        ) : (
+          posts.map((post) => (
+            <Post
+              key={post.id}
+              title={post.title}
+              content={post.body}
+              timePosted={post.createdAt}
+              issueId={post.number}
+            />
+          ))
+        )}
       </PostsContainer>
     </PostsWrapper>
   );

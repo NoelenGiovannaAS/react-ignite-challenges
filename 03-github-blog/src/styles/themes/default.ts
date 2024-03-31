@@ -11,5 +11,5 @@ export const defaultTheme = {
   "base-post": "#112131",
   "base-profile": "#0B1B2B",
   "base-input": "#040F1A",
-  "max-width-page": "1120px",
+  "max-width-page": "864px",
 } as const;

@@ -13,7 +13,7 @@ const router = createBrowserRouter([
         element: <Blog />,
       },
       {
-        path: "/post",
+        path: "/post/:issueId",
         element: <PostPage />,
       },
     ],

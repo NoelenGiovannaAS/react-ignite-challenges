@@ -5,7 +5,7 @@ export const SearchBarWrapper = styled.div`
   flex-direction: column;
   width: 100%;
   gap: 0.75rem;
-  margin-top: 4rem;
+  margin-top: 1rem;
 `;
 export const HeaderSearchBar = styled.div`
   display: flex;
@@ -20,7 +20,9 @@ export const Input = styled.input`
   border-radius: 6px;
   background: ${(props) => props.theme["base-input"]};
   border: 1px solid ${(props) => props.theme["base-border"]};
-  padding: 0.75rem 1rem;
+  padding: 1rem;
+  color: ${(props) => props.theme["base-text"]};
+
   &::placeholder {
     color: ${(props) => props.theme["base-label"]};
     font-size: 1rem;

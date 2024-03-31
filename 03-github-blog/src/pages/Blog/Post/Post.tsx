@@ -5,12 +5,13 @@ interface PostProps {
   title: string;
   content: string;
   timePosted: string;
+  issueId: number;
 }
 
-export const Post = ({ title, content, timePosted }: PostProps) => {
+export const Post = ({ title, content, timePosted, issueId }: PostProps) => {
   return (
     <PostWrapper>
-      <Link to="/post">
+      <Link to={{ pathname: `/post/${issueId}` }}>
         <HeaderPost>
           <Title>{title}</Title>
           <TimePosted>{timePosted}</TimePosted>

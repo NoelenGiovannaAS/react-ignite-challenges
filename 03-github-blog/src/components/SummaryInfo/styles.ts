@@ -10,11 +10,17 @@ export const SummaryInfoHeaderWrapper = styled.section`
   min-width: 35rem;
   max-height: 16rem;
   margin: 0 auto;
-  margin-top: -5rem;
+  margin-top: -7rem;
   gap: 1.5rem;
 
   @media (max-width: 1045px) {
     margin-top: -3.2rem;
+  }
+
+  > img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 8px;
   }
 `;
 
@@ -34,6 +40,9 @@ export const Summary = styled.div`
 export const HeaderSummary = styled.div`
   display: flex;
   justify-content: space-between;
+  > a {
+    text-decoration: none;
+  }
 `;
 
 export const RedirectLink = styled.a`
